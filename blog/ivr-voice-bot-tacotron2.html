@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A voice bot for insurance calls: speech in, classifier, Tacotron 2 out | Sibtain Raza</title>
+<meta name="description" content="Three modules, a trained voice, and the failure modes of phone bots.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-olive"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2019-04-01">April 2019</time></p>
+<h1 class="disp">A voice bot for insurance calls: speech in, classifier, Tacotron 2 out</h1>
+<p class="dek">Three modules, a trained voice, and the failure modes of phone bots.</p>
+</div></section>
+<article class="post h-olive"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>April 2019</dd><dt>Topic</dt><dd>Speech, health and conversation</dd><dt>Where</dt><dd>Care Cloud (Islamabad)</dd><dt>When</dt><dd>2019</dd><dt>Tools</dt><dd><ul><li>Tacotron 2</li><li>Rasa Core</li><li>Rasa NLU</li><li>Text classification</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>Insurance companies get a flood of phone calls, and many are the same few questions. In 2019 I built a voice bot to answer them.</p>
+<h2>Three modules</h2>
+<ol><li><strong>Voice to text</strong> transcribes the caller.</li><li><strong>A text classifier</strong> works out what they are asking.</li><li><strong>Text to speech</strong> answers in a natural voice.</li></ol>
+<p>Keeping them separate meant each could be improved or replaced independently.</p>
+<h2>Training a voice</h2>
+<p>For text to speech, I trained Tacotron 2 on the M-AILABS dataset. Tacotron 2 is a sequence-to-sequence model that predicts a spectrogram from text, and a vocoder turns the spectrogram into audio. I exposed it as a text-to-speech API so other services could use it.</p>
+<h2>The flow around it</h2>
+<p>I also built automated IVR call flows with Rasa Core and Rasa NLU, which handle intent detection and dialogue management for the conversations.</p>
+<h2>What phone bots punish</h2>
+<ul><li>Latency. Silence on a call feels like an error.</li><li>Recognition mistakes. The classifier needs to cope with a wrong word or two.</li><li>Escalation. A bot that cannot help should hand the caller to a person quickly.</li></ul>
+<h2>Lessons</h2>
+<p>Voice interfaces are a pipeline of fallible parts. Design for the failure of each one, and log enough to see which part failed.</p>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="ocr-from-open-source-parts.html"><small>Newer post</small><span>Building OCR from parts</span></a><a href="ehr-virtual-assistant.html"><small>Older post</small><span>My first chatbot</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

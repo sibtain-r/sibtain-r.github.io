@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urdu OCR: a conv-GRU-CTC model trained on synthetic data | Sibtain Raza</title>
+<meta name="description" content="A right-to-left, connected script and no dataset, so I made one.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-olive"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2019-08-01">August 2019</time></p>
+<h1 class="disp">Urdu OCR: a conv-GRU-CTC model trained on synthetic data</h1>
+<p class="dek">A right-to-left, connected script and no dataset, so I made one.</p>
+</div></section>
+<article class="post h-olive"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>August 2019</dd><dt>Topic</dt><dd>Document AI</dd><dt>Where</dt><dd>Personal project</dd><dt>When</dt><dd>July to August 2019</dd><dt>Tools</dt><dd><ul><li>Convolutional network</li><li>GRU</li><li>CTC loss</li><li>Synthetic data</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>Urdu is written right to left in a flowing, connected script, and it has historically had far less OCR tooling than English. In 2019 I built an Urdu OCR model.</p>
+<h2>Architecture</h2>
+<p>A convolutional front end extracts visual features from a line of text. A GRU reads those features as a sequence. Connectionist Temporal Classification (CTC) loss lets the model learn to output characters without needing each character located in the image, which is essential when letters join.</p>
+<h2>The dataset problem</h2>
+<p>Labeled Urdu text images were scarce, so I made the dataset myself using synthetic data generation. Render text in a range of fonts, sizes and backgrounds, add noise and distortion, and you get unlimited labeled examples.</p>
+<h2>What synthetic data can and cannot do</h2>
+<p>It is excellent for covering variety and for volume. It cannot fully reproduce real scans, so check on real images before trusting any number.</p>
+<h2>Lessons</h2>
+<ul><li>For scripts with shaping and joining, character-level CTC models are a natural fit.</li><li>Synthetic data is a starting point. Mix in real examples as soon as you have them.</li><li>Fonts are your annotation budget, and diversity of fonts decides how well the model generalizes.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="claim-notes-text-classification.html"><small>Newer post</small><span>Classifying claim notes</span></a><a href="deep-speech-medical-audio.html"><small>Older post</small><span>Deep Speech on medical audio</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

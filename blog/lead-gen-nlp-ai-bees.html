@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NLP for lead generation: classifying replies, finding entities, choosing prospects | Sibtain Raza</title>
+<meta name="description" content="A 0.91 F1 reply classifier, a multilingual entity model and LangChain pipelines for a marketing team in Hamburg.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-navy"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2022-03-01">March 2022</time></p>
+<h1 class="disp">NLP for lead generation: classifying replies, finding entities, choosing prospects</h1>
+<p class="dek">A 0.91 F1 reply classifier, a multilingual entity model and LangChain pipelines for a marketing team in Hamburg.</p>
+</div></section>
+<article class="post h-navy"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>March 2022</dd><dt>Topic</dt><dd>LLMs and NLP</dd><dt>Where</dt><dd>AI Bees (Hamburg, remote)</dd><dt>When</dt><dd>2021 to 2022</dd><dt>Tools</dt><dd><ul><li>PyTorch</li><li>DistilBERT</li><li>XLM-RoBERTa</li><li>LangChain</li><li>FastAPI</li><li>Docker</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>At AI Bees, a company in Hamburg, I built NLP for marketing: finding the right prospects and handling their replies.</p>
+<h2>Understanding replies</h2>
+<p>When prospects answer outreach messages, someone has to decide what each answer means: interested, not now, not relevant. I trained a response classifier on DistilBERT. Because labeled replies are scarce, I augmented the text data to enlarge the training set. The model reached an F1-score of 0.91 on test data.</p>
+<h2>Pulling out the details</h2>
+<p>I trained an XLM-RoBERTa model for named-entity recognition, to extract relevant information from text. A multilingual model was a natural fit for a company working across languages.</p>
+<h2>Choosing prospects</h2>
+<p>One of the services analyzed LinkedIn profiles using Big Five (OCEAN) psychological tests, implemented with transformer models such as DistilBERT, to help target the right prospects.</p>
+<h2>Shipping it</h2>
+<p>The tools were built as LangChain pipelines, dockerized and served through FastAPI. PyTorch powered the classifier and the entity model.</p>
+<h2>Writing at scale</h2>
+<p>For generating outreach text I used self-hosted GPT-J and GPT-Neo. There is a separate post about that.</p>
+<h2>Takeaways</h2>
+<ul><li>Data augmentation is a cheap first move when labels are scarce.</li><li>Small, well-tuned models beat large ones for narrow classification, and they are cheaper to serve.</li><li>A service is not finished when the model works. It is finished when someone else can call it.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="terraform-cicd-for-ml.html"><small>Newer post</small><span>Terraform, CI/CD and the part of ML that decides whether anything ships</span></a><a href="cold-email-generator-gptj.html"><small>Older post</small><span>An email generator on GPT-J</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

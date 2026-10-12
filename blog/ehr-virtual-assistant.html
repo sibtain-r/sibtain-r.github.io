@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My first chatbot: a contextual EHR assistant | Sibtain Raza</title>
+<meta name="description" content="Intent detection, an LSTM for context, and later Rasa Core.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-olive"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2018-09-01">September 2018</time></p>
+<h1 class="disp">My first chatbot: a contextual EHR assistant</h1>
+<p class="dek">Intent detection, an LSTM for context, and later Rasa Core.</p>
+</div></section>
+<article class="post h-olive"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>September 2018</dd><dt>Topic</dt><dd>Speech, health and conversation</dd><dt>Where</dt><dd>Care Cloud (Islamabad)</dd><dt>When</dt><dd>2018 to 2020</dd><dt>Tools</dt><dd><ul><li>LSTM</li><li>Rasa Core</li><li>Rasa NLU</li><li>Flask</li><li>SQLAlchemy</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>My first project at Care Cloud, in 2018, was a contextual chatbot for electronic health records.</p>
+<h2>What contextual means</h2>
+<p>A user asks "show me her last visit", and then "and the medications?" The second question only makes sense with the first in mind. A chatbot that handles each message alone cannot follow a conversation.</p>
+<h2>Intent and context</h2>
+<p>I built it from two parts: intent detection, to decide what the user wants, and an LSTM to manage the context of the conversation.</p>
+<h2>Growing up</h2>
+<p>Later I used Rasa Core and Rasa NLU for the EHR virtual assistant and for IVR call flows. Rasa gives you proper dialogue management, with stories, slots and policies, instead of one-off code for each conversation.</p>
+<h2>The plumbing</h2>
+<p>Chatbots need data. I developed REST APIs with Flask as microservices that fetch data from the database via SQLAlchemy and update records.</p>
+<h2>Lessons</h2>
+<ul><li>Healthcare users will test the edges, so plan for "I don't understand" with a useful fallback.</li><li>Keep NLU and business logic apart. The first changes weekly and the second should not.</li><li>Never let a chatbot change a record without confirming.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="ivr-voice-bot-tacotron2.html"><small>Newer post</small><span>A voice bot for insurance calls</span></a><a href="text-normalization-final-year-project.html"><small>Older post</small><span>Text normalization with deep learning</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sibtain Raza: Lead ML Engineer, agentic AI and document intelligence</title>
+<meta name="description" content="Sibtain Raza is a lead ML engineer with 8+ years of experience building agentic AI, multimodal RAG and document-intelligence systems.">
+<meta name="theme-color" content="#08122a">
+<meta property="og:title" content="Sibtain Raza: Lead ML Engineer">
+<meta property="og:description" content="Speech, documents, images and video turned into systems a team can ask questions of.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --navy-950:#08122a;
+  --navy-800:#13244a;
+  --navy-glow:#9db0ec;
+  --maroon-700:#6b1826;
+  --maroon-600:#8a2233;
+  --maroon-glow:#e8909b;
+  --olive-700:#3f4519;
+  --olive-500:#7b8236;
+  --olive-300:#b2b755;
+  --olive-paper:#d5d8ac;
+  --paper:#ebe9dd;
+  --display:'Archivo','Arial Narrow',Impact,sans-serif;
+  --text:'Newsreader',Georgia,'Times New Roman',serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:clip;background:var(--black);color:var(--paper);font-family:var(--text);font-size:1.125rem;line-height:1.65;font-optical-sizing:auto}
+img,svg,canvas{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+section[id]{scroll-margin-top:3.5rem}
+.wrap{width:min(1180px,100% - 3rem);margin-inline:auto}
+.disp{font-family:var(--display);font-stretch:62%;font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.005em}
+:focus-visible{outline:3px solid var(--olive-300);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--olive-300);color:#000;padding:.6rem 1rem;z-index:200;font-family:var(--display);font-weight:600}
+.skip:focus{left:0}
+
+/* ---------- navigation ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(235,233,221,.12)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
+.brand{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:1.15rem;text-decoration:none;letter-spacing:.01em}
+.nav ul{display:flex;gap:1.8rem}
+.nav a.l{font-family:var(--display);font-weight:500;font-size:.95rem;text-decoration:none;color:var(--paper);opacity:.82;padding:.3rem 0;border-bottom:2px solid transparent}
+.nav a.l:hover{opacity:1;border-color:var(--olive-300)}
+.menu{display:none;background:none;border:1px solid rgba(235,233,221,.4);color:var(--paper);font:500 .9rem var(--display);padding:.35rem .8rem;cursor:pointer}
+@media (max-width:760px){
+  .menu{display:block}
+  .nav ul{display:none;position:absolute;top:3.5rem;left:0;right:0;background:#000;flex-direction:column;gap:0;border-bottom:1px solid rgba(235,233,221,.2)}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:1rem 1.5rem;border-top:1px solid rgba(235,233,221,.1)}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:grid;align-content:end;padding:6.5rem 0 2rem;overflow:hidden;
+  background:
+    radial-gradient(55% 45% at 88% 8%, rgba(138,34,51,.55), transparent 70%),
+    radial-gradient(70% 60% at 0% 100%, rgba(19,36,74,.9), transparent 70%),
+    var(--navy-950)}
+#field{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;pointer-events:none}
+.hero a{pointer-events:auto}
+.name{font-size:clamp(4rem,15vw,13.5rem);margin-left:-.04em}
+.name span{display:block}
+.name .out{color:transparent;-webkit-text-stroke:2px var(--olive-300)}
+.hero .sub{max-width:34ch;margin-top:1.8rem;font-size:clamp(1.25rem,2.3vw,1.75rem);line-height:1.35;font-style:italic;font-weight:400}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-stretch:85%;font-size:1.05rem;letter-spacing:.01em;text-decoration:none;padding:.8rem 1.4rem;border:2px solid var(--paper);color:var(--paper);background:transparent;cursor:pointer}
+.btn:hover{background:var(--paper);color:#000}
+.btn.solid{background:var(--olive-300);border-color:var(--olive-300);color:#000}
+.btn.solid:hover{background:var(--paper);border-color:var(--paper)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:1rem;border-top:1px solid rgba(235,233,221,.28);font-size:1rem;line-height:1.45;color:#c9cbd8}
+.facts b{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--paper)}
+@media (max-width:760px){.facts{grid-template-columns:1fr;gap:.9rem}}
+
+/* ---------- about ---------- */
+.about{background:var(--olive-paper);color:#0a0b04;padding:6rem 0}
+.about .grid{display:grid;grid-template-columns:7fr 5fr;gap:4rem;align-items:start}
+.about blockquote{margin:0;font-size:clamp(1.9rem,3.8vw,3.1rem);line-height:1.15;font-weight:500;letter-spacing:-.01em}
+.about blockquote em{font-style:italic;color:var(--maroon-700)}
+.about .prose p+p{margin-top:1.1rem}
+.about .prose b{font-family:var(--display);font-weight:800;font-stretch:80%;color:var(--maroon-700);font-size:1.12em}
+.about .btn{border-color:#0a0b04;color:#0a0b04;margin-top:1.8rem}
+.about .btn:hover{background:#0a0b04;color:var(--olive-paper)}
+@media (max-width:860px){.about .grid{grid-template-columns:1fr;gap:2.4rem}}
+
+/* ---------- journey ---------- */
+.jhead{padding:6rem 0 3rem;background:#000}
+.jhead h2{font-size:clamp(3rem,9vw,7.5rem)}
+.jhead p{max-width:44ch;margin-top:1.2rem;color:#c9cbd8;font-size:1.25rem}
+.band{background:var(--bg);color:var(--fg);padding:5.5rem 0}
+.band-grid{display:grid;grid-template-columns:6fr 6fr;gap:3.5rem;align-items:start}
+.band-grid>*{min-width:0}
+.band-key{position:sticky;top:5.5rem}
+.years{display:block;font-family:var(--display);font-weight:600;font-stretch:80%;font-size:1.15rem;letter-spacing:.02em;color:var(--muted)}
+.verb{font-size:clamp(2.8rem,5.8vw,5.6rem);overflow-wrap:anywhere;color:var(--accent);margin:.35rem 0 .6rem}
+.where{font-family:var(--display);font-weight:500;font-size:1.05rem;color:var(--muted)}
+.role{font-family:var(--display);font-weight:700;font-stretch:80%;font-size:1.5rem;letter-spacing:.01em;color:var(--fg)}
+.lead{font-size:1.4rem;line-height:1.4;font-style:italic;margin:.5rem 0 1.4rem;max-width:36ch}
+.band ul{max-width:62ch}
+.band li{position:relative;padding-left:1.4rem;margin-bottom:.8rem}
+.band li::before{content:"";position:absolute;left:0;top:.8em;width:.7rem;height:2px;background:var(--accent)}
+.sub-h{font-family:var(--display);font-weight:700;font-stretch:80%;font-size:1.05rem;margin:1.6rem 0 .7rem;color:var(--accent)}
+.stack{margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:1rem;color:var(--muted);max-width:62ch}
+.b-black{--bg:#000;--fg:var(--paper);--accent:var(--olive-300);--muted:#a9ab9a;--rule:rgba(235,233,221,.2)}
+.b-olive{--bg:var(--olive-700);--fg:var(--paper);--accent:var(--olive-300);--muted:#c1c58f;--rule:rgba(235,233,221,.25)}
+.b-maroon{--bg:var(--maroon-700);--fg:var(--paper);--accent:#f1b2ba;--muted:#e6b9bf;--rule:rgba(235,233,221,.28)}
+.b-navy{--bg:var(--navy-800);--fg:var(--paper);--accent:var(--navy-glow);--muted:#b4bfe3;--rule:rgba(235,233,221,.25)}
+.b-now{--bg:var(--olive-300);--fg:#050601;--accent:var(--maroon-700);--muted:#2f3312;--rule:rgba(0,0,0,.3)}
+.next{padding:3.5rem 0;background:#000;text-align:left}
+.next p{font-family:var(--display);font-stretch:70%;font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,5vw,3.6rem);line-height:1}
+.next span{color:var(--olive-300)}
+@media (max-width:860px){
+  .band-grid{grid-template-columns:1fr;gap:1.6rem}
+  .band-key{position:static}
+  .band{padding:4rem 0}
+}
+
+/* ---------- playground ---------- */
+.play{background:var(--navy-950);padding:6rem 0;border-top:1px solid rgba(235,233,221,.1)}
+.play h2{font-size:clamp(2.8rem,8vw,6.5rem)}
+.play .intro{max-width:46ch;margin:1.2rem 0 2.2rem;color:#c9cbd8;font-size:1.25rem}
+.seg{display:flex;flex-wrap:wrap;gap:0;margin-bottom:2rem}
+.seg button{font:600 1.05rem var(--display);font-stretch:85%;padding:.7rem 1.5rem;background:transparent;color:var(--paper);border:2px solid var(--paper);margin-right:-2px;cursor:pointer}
+.seg button:hover{background:rgba(235,233,221,.12)}
+.seg button[aria-pressed="true"]{background:var(--olive-300);border-color:var(--olive-300);color:#000;position:relative;z-index:1}
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.node{position:relative;padding:1.1rem 1rem 1.3rem;border-top:4px solid rgba(235,233,221,.2);background:rgba(0,0,0,.35);opacity:.38;transition:opacity .35s,border-color .35s,background .35s}
+.node.on{opacity:1;border-top-color:var(--olive-300);background:rgba(0,0,0,.6)}
+.node:not(:last-child)::after{content:"";position:absolute;top:-4px;right:-18px;width:18px;height:4px;background:rgba(235,233,221,.2);transition:background .35s}
+.node.on:not(:last-child)::after{background:var(--olive-300)}
+.node .k{font-family:var(--display);font-weight:600;font-stretch:80%;font-size:.95rem;color:var(--olive-300)}
+.node h3{font-family:var(--display);font-stretch:75%;font-weight:800;text-transform:uppercase;font-size:1.45rem;line-height:1;margin:.35rem 0 .55rem}
+.node p{font-size:1rem;line-height:1.45;color:#d2d4df}
+.ask{margin-top:2rem;display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.ask code{font-family:var(--mono);font-size:1rem;color:var(--olive-300);background:rgba(0,0,0,.45);padding:.6rem .9rem;border-left:4px solid var(--maroon-600)}
+.replay{background:none;border:0;color:var(--navy-glow);font:600 1rem var(--display);text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:.3rem 0}
+.note{margin-top:1.4rem;font-size:.95rem;color:#a5aac3;max-width:60ch;font-style:italic}
+@media (max-width:900px){
+  .pipe{grid-template-columns:1fr;gap:14px}
+  .node{border-top:0;border-left:4px solid rgba(235,233,221,.2)}
+  .node.on{border-left-color:var(--olive-300)}
+  .node:not(:last-child)::after{top:auto;bottom:-14px;right:auto;left:-4px;width:4px;height:14px}
+}
+
+/* ---------- work index ---------- */
+.work{background:var(--olive-paper);color:#0a0b04;padding:6rem 0}
+.work h2{font-size:clamp(2.8rem,8vw,6.5rem)}
+.work .intro{max-width:46ch;margin:1.2rem 0 2rem;font-size:1.25rem;color:#2c2f14}
+.filters{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-bottom:2rem}
+.filters button{background:none;border:0;border-bottom:3px solid transparent;font:600 1.05rem var(--display);font-stretch:85%;color:#0a0b04;padding:.3rem 0;cursor:pointer;opacity:.7}
+.filters button:hover{opacity:1}
+.filters button[aria-pressed="true"]{opacity:1;border-bottom-color:var(--maroon-700)}
+.proj{border-top:2px solid #0a0b04}
+.proj:last-of-type{border-bottom:2px solid #0a0b04}
+.proj[hidden]{display:none}
+.proj summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr) minmax(0,2fr) 2rem;gap:1.5rem;align-items:baseline;padding:1.2rem .6rem}
+.proj summary::-webkit-details-marker{display:none}
+.p-name{font-family:var(--display);font-stretch:68%;font-weight:900;text-transform:uppercase;font-size:clamp(1.9rem,4vw,3rem);line-height:.95}
+.p-line{font-size:1.1rem;line-height:1.35}
+.p-year{font-family:var(--display);font-weight:600;font-stretch:80%;font-size:1rem;text-align:right;color:var(--maroon-700)}
+.proj summary::after{content:"+";font-family:var(--display);font-weight:500;font-size:1.8rem;line-height:1;text-align:right;transition:transform .25s}
+.proj[open] summary::after{transform:rotate(45deg)}
+.proj summary:hover,.proj[open] summary{background:var(--maroon-700);color:var(--paper)}
+.proj summary:hover .p-year,.proj[open] .p-year{color:#f1b2ba}
+.p-body{background:var(--navy-800);color:var(--paper);padding:1.6rem .6rem 1.9rem;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.5rem}
+.p-body p{max-width:58ch}
+.p-meta{font-size:1rem;color:#c6cde6}
+.p-meta b{font-family:var(--display);font-weight:700;font-stretch:80%;color:var(--olive-300);display:block;margin-top:.8rem}
+.p-meta b:first-child{margin-top:0}
+@media (max-width:760px){
+  .proj summary{grid-template-columns:1fr 2rem;gap:.3rem 1rem}
+  .p-line{grid-column:1}
+  .p-year{grid-column:1;text-align:left}
+  .proj summary::after{grid-row:1;grid-column:2}
+  .p-body{grid-template-columns:1fr}
+}
+
+/* ---------- toolbox ---------- */
+.tools{background:#000;padding:6rem 0}
+.tools h2{font-size:clamp(2.8rem,8vw,6.5rem);margin-bottom:3rem}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem 2.5rem}
+.tg h3{font-style:italic;font-weight:600;font-size:1.5rem;line-height:1.2;padding-bottom:.6rem;margin-bottom:.8rem;border-bottom:3px solid var(--c)}
+.tg li{padding:.12rem 0;font-size:1.1rem}
+.tg.o{--c:var(--olive-300)}.tg.o h3{color:var(--olive-300)}
+.tg.m{--c:var(--maroon-glow)}.tg.m h3{color:var(--maroon-glow)}
+.tg.n{--c:var(--navy-glow)}.tg.n h3{color:var(--navy-glow)}
+@media (max-width:860px){.tgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.tgrid{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--maroon-700);padding:6.5rem 0 2.5rem}
+.contact h2{font-size:clamp(3.4rem,12vw,10.5rem);max-width:12ch}
+.contact .intro{max-width:46ch;margin:1.6rem 0 2rem;font-size:1.3rem;color:#f4d8dc}
+.contact .btn.solid:hover{background:#000;border-color:#000;color:var(--paper)}
+.contact .row{display:flex;flex-wrap:wrap;gap:.8rem}
+.foot{margin-top:5rem;padding-top:1.1rem;border-top:1px solid rgba(235,233,221,.3);font-size:.95rem;color:#f0c9ce;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+
+/* ---------- portrait ---------- */
+.portrait{margin:0 0 2.4rem;max-width:300px;position:relative}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;position:relative;z-index:1;border:3px solid #0a0b04;background:var(--navy-800)}
+.portrait::after{content:"";position:absolute;inset:14px -14px -14px 14px;background:var(--maroon-700);z-index:0}
+.p-body .wl{margin-top:1rem;font-size:1rem;color:#c6cde6}
+.p-body .wl a{color:var(--olive-300);text-underline-offset:3px}
+.p-body .wl a:hover{color:var(--paper)}
+
+/* ---------- writing ---------- */
+.writing{background:var(--navy-800);padding:6rem 0}
+.writing h2{font-size:clamp(2.8rem,8vw,6.5rem)}
+.writing .intro{max-width:46ch;margin:1.2rem 0 2.2rem;color:#c9d0ea;font-size:1.25rem}
+.wlist .row-a{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr) minmax(0,2fr);gap:1.5rem;align-items:baseline;padding:1.1rem .6rem;border-top:2px solid rgba(235,233,221,.35);text-decoration:none}
+.wlist .row-a:last-child{border-bottom:2px solid rgba(235,233,221,.35)}
+.wlist .t{font-family:var(--display);font-stretch:70%;font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1}
+.wlist .d{font-size:1.02rem;line-height:1.4;color:#c9d0ea}
+.wlist .y{font-family:var(--display);font-weight:600;font-stretch:80%;font-size:.98rem;text-align:right;color:var(--olive-300)}
+.wlist .row-a:hover{background:var(--maroon-700)}
+.wlist .row-a:hover .d{color:var(--paper)}
+.writing .all{margin-top:2.2rem}
+@media (max-width:760px){.wlist .row-a{grid-template-columns:1fr;gap:.3rem}.wlist .y{text-align:left}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Sibtain Raza</a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul id="navLinks">
+      <li><a class="l" href="#about">About</a></li>
+      <li><a class="l" href="#journey">Journey</a></li>
+      <li><a class="l" href="#playground">Playground</a></li>
+      <li><a class="l" href="#work">Work</a></li>
+      <li><a class="l" href="#writing">Writing</a></li>
+      <li><a class="l" href="#toolbox">Toolbox</a></li>
+      <li><a class="l" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1 class="name disp" aria-label="Sibtain Raza"><span>Sibtain</span><span class="out">Raza</span></h1>
+    <p class="sub">I build AI systems that listen, read, see and act: speech, documents, images and video turned into things a team can ask questions of.</p>
+    <div class="hero-cta">
+      <a class="btn solid" href="#journey">Follow the journey</a>
+      <a class="btn" href="#contact">Say hello</a>
+    </div>
+    <div class="facts">
+      <p><b>Lead ML engineer</b>8+ years across healthcare, documents, MLOps and law-enforcement AI.</p>
+      <p><b>From Shakargarh, Punjab</b>Now based in Islamabad, working remotely with teams in the US and Europe.</p>
+      <p><b>Right now</b>Building agentic AI assistants as Sr. AI Consultant at TargetZero.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap grid">
+    <blockquote>One question, asked six different ways: how do you turn <em>unstructured human signal</em> into something a system can reason over?</blockquote>
+    <div class="prose">
+      <figure class="portrait">
+        <!-- Put your photo at assets/portrait.jpg (4:5 works best). Until then the placeholder shows. -->
+        <img src="assets/portrait.jpg" width="400" height="500" alt="Portrait of Sibtain Raza" onerror="this.onerror=null;this.src='assets/portrait-placeholder.svg'">
+      </figure>
+      <p>I'm a lead ML engineer. For more than <b>eight years</b> I've built machine-learning systems for teams in the US and Europe: first speech and text models for healthcare, then document intelligence on OCR and layout models, then the MLOps and cloud work that keeps models running, and now agentic AI assistants for law enforcement.</p>
+      <p>Along the way I reached <b>0.92 field-level F1</b> extracting data from thousands of document templates, and <b>0.91 F1</b> classifying responses for a lead-generation product. What I care about most is what happens after the model works: retrieval, streaming, access control, evaluation and monitoring.</p>
+      <p>I'm from Shakargarh, in Pakistan's Punjab. I finished matriculation at The Educators Higher Secondary School Shakargarh, then F.Sc in Pre-Engineering at Govt. Degree College, Zafarwal, before moving to Islamabad to study computer science at FAST-NUCES.</p>
+      <a class="btn" href="Sibtain_Raza_Resume.pdf">Download my résumé (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section id="journey" aria-labelledby="jtitle">
+  <div class="jhead">
+    <div class="wrap">
+      <h2 class="disp" id="jtitle">The journey</h2>
+      <p>Roots, a prologue at university, and six chapters since. Each chapter taught me to handle a different kind of signal.</p>
+    </div>
+  </div>
+
+  <article class="band b-navy">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2008 to 2014</span>
+        <h3 class="verb disp">Roots</h3>
+        <p class="where">Shakargarh and Zafarwal, Punjab</p>
+      </div>
+      <div class="band-body">
+        <p class="role">Matriculation and F.Sc Pre-Engineering</p>
+        <p class="lead">It all started in Shakargarh, in Pakistan's Punjab.</p>
+        <ul>
+          <li>Matriculation in General Science at The Educators Higher Secondary School Shakargarh, 2008 to 2012.</li>
+          <li>F.Sc in Pre-Engineering at Govt. Degree College, Zafarwal, 2012 to 2014.</li>
+          <li>Outside class, I took part in singing.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-black">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2014 to 2018</span>
+        <h3 class="verb disp">Prologue</h3>
+        <p class="where">FAST-NUCES, Islamabad</p>
+      </div>
+      <div class="band-body">
+        <p class="role">BS Computer Science</p>
+        <p class="lead">A first obsession: teaching machines to cope with messy human signal.</p>
+        <ul>
+          <li>Won a fully funded ICT scholarship for the whole degree.</li>
+          <li>Final-year project on text normalization for speech synthesis and recognition, comparing several neural network architectures.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-olive">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2018 to 2020</span>
+        <h3 class="verb disp">Listen</h3>
+        <p class="where">Care Cloud, Islamabad</p>
+      </div>
+      <div class="band-body">
+        <p class="role">Junior Data Scientist</p>
+        <p class="lead">Healthcare speech and text, years before LLMs made it easy.</p>
+        <ul>
+          <li>Worked on speech recognition with the PyTorch Deep Speech model. I annotated IVR call audio, added a statistical language model, then used spaCy and a classifier to pull out the information that mattered.</li>
+          <li>Built an EHR virtual assistant and automated IVR call flows with Rasa Core and Rasa NLU.</li>
+          <li>Fine-tuned BERT for multi-class classification on imbalanced healthcare text and served it from a dockerized Flask app.</li>
+          <li>Wrote Flask microservices that read and update records through SQLAlchemy.</li>
+        </ul>
+        <p class="stack">Deep Speech, Rasa Core, BERT, spaCy, Flask, SQLAlchemy</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-maroon">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2020 to 2021</span>
+        <h3 class="verb disp">See</h3>
+        <p class="where">VisionX, then PackageX</p>
+      </div>
+      <div class="band-body">
+        <p class="role">Data Scientist</p>
+        <p class="lead">Documents are pictures first. I learned to read them.</p>
+        <p class="sub-h">VisionX, January 2020 to March 2021</p>
+        <ul>
+          <li>Built OCR and layout-model pipelines for invoices, receipts, insurance cards and driving licences, reaching 0.92 field-level F1 across thousands of templates.</li>
+          <li>Built a PDF redaction pipeline that detects and masks personal data for GDPR compliance.</li>
+          <li>Designed the cloud architecture for a voice-verification REST API.</li>
+        </ul>
+        <p class="sub-h">PackageX, March 2021 to September 2021</p>
+        <ul>
+          <li>Extracted sender and receiver details from multilingual parcel images for a mailroom OCR service.</li>
+          <li>Cut inference latency with ONNX and PyTorch Serve behind FastAPI, and built TensorFlow Lite vision models for mobile.</li>
+        </ul>
+        <p class="stack">OCR, Tesseract, LayoutLMv2 and v3, PICK, ONNX, PyTorch Serve, FastAPI</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-navy">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2021 to 2022</span>
+        <h3 class="verb disp">Write</h3>
+        <p class="where">AI Bees, Hamburg</p>
+      </div>
+      <div class="band-body">
+        <p class="role">AI/ML Engineer</p>
+        <p class="lead">My first production LLMs, long before the agent boom.</p>
+        <ul>
+          <li>Built lead-generation and prospecting tools on LangChain pipelines, dockerized and served through FastAPI.</li>
+          <li>Reached a 0.91 F1-score on a PyTorch response classifier by augmenting text and fine-tuning DistilBERT.</li>
+          <li>Trained a PyTorch XLM-RoBERTa model for named-entity recognition.</li>
+          <li>Ran self-hosted GPT-J and GPT-Neo to generate marketing copy and cold emails.</li>
+        </ul>
+        <p class="stack">LangChain, PyTorch, DistilBERT, XLM-RoBERTa, GPT-J, GPT-Neo, FastAPI, Docker</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-black">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2021 to 2023</span>
+        <h3 class="verb disp">Ship</h3>
+        <p class="where">Point of IT, remote for a US company</p>
+      </div>
+      <div class="band-body">
+        <p class="role">Software Engineer, then Sr. Software Engineer (ML Ops)</p>
+        <p class="lead">A model that never leaves a notebook helps nobody.</p>
+        <ul>
+          <li>Designed and ran CI/CD pipelines with Terraform to provision and manage AWS environments.</li>
+          <li>Built AWS Batch pipelines for large-scale training and inference, with containerized ML services in Docker.</li>
+        </ul>
+        <p class="sub-h">Client engagements</p>
+        <ul>
+          <li>MoodMD: Terraform pipelines and Python DevOps scripts that checked production models were running.</li>
+          <li>Boston University (BUCAS): designed and deployed a CI/CD pipeline.</li>
+          <li>Gardiant: infrastructure as code and automation for CI/CD of AWS Lambda functions and ECS applications.</li>
+        </ul>
+        <p class="stack">Terraform, AWS Batch, ECS, Lambda, Docker, CI/CD, Python</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-maroon">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2023 to 2025</span>
+        <h3 class="verb disp">Understand</h3>
+        <p class="where">HighPlains Computing, Los Angeles (remote)</p>
+      </div>
+      <div class="band-body">
+        <p class="role">Lead ML Ops Engineer</p>
+        <p class="lead">Two products, one lesson: unstructured data gets valuable once you can ask it questions.</p>
+        <p class="sub-h">Hercule</p>
+        <ul>
+          <li>An analytics platform for law enforcement that takes in audio, video, images and PDFs and turns them into structured, queryable data.</li>
+          <li>Self-hosted Whisper handles speech-to-text, a Qwen vision-language model reads documents and images, and AWS Textract extracts structured fields.</li>
+          <li>The extracted text feeds a RAG system on ChromaDB with AWS Bedrock embeddings, queried through a LangGraph chatbot.</li>
+        </ul>
+        <p class="sub-h">Lili</p>
+        <ul>
+          <li>A healthcare solution that reads physician notes, extracts ICD-10 and CPT codes, medications and anatomy, and automates entering the encounter in an EHR.</li>
+          <li>Ran on AWS Batch, SageMaker, ECS, Athena and DynamoDB, and talked to the EHR through FHIR APIs for encounters, appointments and other clinical operations.</li>
+        </ul>
+        <p class="sub-h">Careem</p>
+        <ul>
+          <li>Delivered usage and login analytics reports for the ride-hailing client.</li>
+        </ul>
+        <p class="stack">Whisper, Qwen VLM, AWS Textract, ChromaDB, AWS Bedrock, LangGraph, FHIR, SageMaker</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="band b-now">
+    <div class="wrap band-grid">
+      <div class="band-key">
+        <span class="years">2025 to now</span>
+        <h3 class="verb disp">Act</h3>
+        <p class="where">TargetZero, USA (remote)</p>
+      </div>
+      <div class="band-body">
+        <p class="role">Sr. AI Consultant</p>
+        <p class="lead">From answering questions to doing the work, safely.</p>
+        <ul>
+          <li>Architected and deployed Zero, a multi-agent AI assistant that lets law-enforcement officers and managers query incident data in plain language, built on Pydantic AI, FastAPI and AWS Bedrock (Claude).</li>
+          <li>Built the streaming layer on Redis Streams and Server-Sent Events so long agent sessions survive dropped connections without paying for inference twice.</li>
+          <li>Designed context management that keeps long conversations coherent while holding token cost down.</li>
+          <li>Implemented multi-tenant access control and prompt-injection guardrails for a sensitive environment.</li>
+          <li>Built an evaluation framework that pairs automated regression checks with LLM-based grading, plus audit logging, cost tracking and tracing.</li>
+          <li>Added RAG over incident narratives with LanceDB and Bedrock Titan embeddings, and connectors that pull data from CAD, jail-management and law-enforcement records systems.</li>
+        </ul>
+        <p class="stack">Pydantic AI, AWS Bedrock, FastAPI, Redis Streams, LanceDB, PostgreSQL</p>
+      </div>
+    </div>
+  </article>
+
+  <div class="next">
+    <div class="wrap">
+      <p>Next chapter: <span>you tell me.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLAYGROUND ================= -->
+<section class="play" id="playground" aria-labelledby="ptitle">
+  <div class="wrap">
+    <h2 class="disp" id="ptitle">Signal to structure</h2>
+    <p class="intro">Choose what comes in and watch what it becomes. This is the shape of the pipelines I keep building, whatever the format.</p>
+
+    <div class="seg" role="group" aria-label="Input type">
+      <button type="button" aria-pressed="true" data-k="audio">Audio</button>
+      <button type="button" aria-pressed="false" data-k="video">Video</button>
+      <button type="button" aria-pressed="false" data-k="image">Image</button>
+      <button type="button" aria-pressed="false" data-k="pdf">PDF</button>
+      <button type="button" aria-pressed="false" data-k="text">Text</button>
+    </div>
+
+    <ol class="pipe" id="pipe" aria-live="polite">
+      <li class="node"><span class="k"></span><h3></h3><p></p></li>
+      <li class="node"><span class="k"></span><h3></h3><p></p></li>
+      <li class="node"><span class="k"></span><h3></h3><p></p></li>
+      <li class="node"><span class="k"></span><h3></h3><p></p></li>
+      <li class="node"><span class="k"></span><h3></h3><p></p></li>
+    </ol>
+
+    <div class="ask">
+      <code id="ask"></code>
+      <button type="button" class="replay" id="replay">Replay</button>
+    </div>
+    <p class="note">Illustrative. It shows the general pattern I use, not the internals of any one client system.</p>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="work" id="work" aria-labelledby="wtitle">
+  <div class="wrap">
+    <h2 class="disp" id="wtitle">Selected work</h2>
+    <p class="intro">Twelve things I built. Open any row for the detail and a link to the write-up, or filter by the kind of problem.</p>
+
+    <div class="filters" id="filters" role="group" aria-label="Filter projects">
+      <button type="button" aria-pressed="true" data-f="all">All</button>
+      <button type="button" aria-pressed="false" data-f="agents">Agents</button>
+      <button type="button" aria-pressed="false" data-f="multimodal">Multimodal</button>
+      <button type="button" aria-pressed="false" data-f="document">Document AI</button>
+      <button type="button" aria-pressed="false" data-f="health">Healthcare</button>
+      <button type="button" aria-pressed="false" data-f="speech">Speech</button>
+      <button type="button" aria-pressed="false" data-f="llm">LLM and NLP</button>
+      <button type="button" aria-pressed="false" data-f="mlops">MLOps</button>
+    </div>
+
+    <div id="projects">
+      <details class="proj" data-tags="agents llm">
+        <summary><span class="p-name">Zero</span><span class="p-line">A multi-agent assistant for law-enforcement investigations</span><span class="p-year">2025 to now</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>TargetZero<b>Stack</b>Pydantic AI, AWS Bedrock (Claude), FastAPI, Redis Streams, LanceDB, PostgreSQL</div>
+          <div><p>Officers and managers ask questions about incidents and narratives in plain language. Around the agents I built streaming that survives reconnects, context management, multi-tenant access control, prompt-injection guardrails, an evaluation framework and full observability.</p><p class="wl">Read the write-up: <a href="blog/zero-multi-agent-assistant.html">Building Zero</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="multimodal agents">
+        <summary><span class="p-name">Hercule</span><span class="p-line">Audio, video, images and PDFs you can chat with</span><span class="p-year">2023 to 2025</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>HighPlains Computing<b>Stack</b>Whisper, Qwen VLM, AWS Textract, ChromaDB, AWS Bedrock, LangGraph</div>
+          <div><p>Ingests law-enforcement evidence in four formats, converts it into structured data, and indexes the extracted text for retrieval so a LangGraph chatbot can answer questions over it.</p><p class="wl">Read the write-up: <a href="blog/hercule-evidence-to-answers.html">Hercule</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="health document">
+        <summary><span class="p-name">Lili</span><span class="p-line">Physician notes in, coded EHR encounters out</span><span class="p-year">2023 to 2025</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>HighPlains Computing<b>Stack</b>AWS Batch, SageMaker, ECS, Athena, DynamoDB, FHIR APIs</div>
+          <div><p>Extracts ICD-10 and CPT codes, medications and anatomy from clinical notes, then creates encounters and related records in the EHR through FHIR APIs.</p><p class="wl">Read the write-up: <a href="blog/lili-clinical-notes-to-ehr.html">Lili</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="document">
+        <summary><span class="p-name">Invoice and receipt automation</span><span class="p-line">Field extraction across thousands of templates</span><span class="p-year">2020 to 2021</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>VisionX<b>Stack</b>OCR, LayoutLMv2, LayoutLMv3, PyTorch</div>
+          <div><p>Line items, totals and vendor details pulled from invoices and receipts with OCR and layout-aware transformers, reaching 0.92 F1 at field level.</p><p class="wl">Read the write-up: <a href="blog/receipts-english-arabic-layoutlm.html">Reading receipts in English and Arabic, then reading thousands of templates</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="document">
+        <summary><span class="p-name">Cards and licences</span><span class="p-line">Insurance cards and driving licences to structured fields</span><span class="p-year">2020 to 2021</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>VisionX<b>Stack</b>Tesseract OCR, PICK</div>
+          <div><p>Combined Tesseract OCR with a graph-based PICK model to read the fixed-layout identity documents that forms and onboarding flows depend on.</p><p class="wl">Read the write-up: <a href="blog/insurance-cards-licences-pick.html">Insurance cards and driving licences</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="document multimodal">
+        <summary><span class="p-name">Parcel tracking</span><span class="p-line">Sender and receiver details from parcel photos, in many languages</span><span class="p-year">2021</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>PackageX<b>Stack</b>OCR, LayoutLMv3, ONNX, PyTorch Serve, FastAPI, TensorFlow Lite</div>
+          <div><p>Part of a mailroom OCR service. Optimized for low-latency serving, with lightweight vision models for mobile.</p><p class="wl">Read the write-up: <a href="blog/packagex-parcel-tracking.html">PackageX</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="document">
+        <summary><span class="p-name">PDF redaction</span><span class="p-line">Finding and masking personal data in documents</span><span class="p-year">2020 to 2021</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>VisionX<b>Stack</b>OCR, layout detection models</div>
+          <div><p>Detects personal data across financial and healthcare documents and masks it, to support GDPR compliance.</p><p class="wl">Read the write-up: <a href="blog/pdf-redaction-pii.html">Redacting personal data from PDFs with OCR and layout models</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="health llm">
+        <summary><span class="p-name">Healthcare text classifier</span><span class="p-line">Multi-class BERT model for badly imbalanced clinical text</span><span class="p-year">2018 to 2020</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>Care Cloud<b>Stack</b>BERT, PyTorch, Flask, Docker</div>
+          <div><p>Used BERT embeddings with a custom fine-tuned layer to handle class imbalance, then served the model from a dockerized Flask application.</p><p class="wl">Read the write-up: <a href="blog/claim-notes-text-classification.html">Classifying claim notes</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="health speech agents">
+        <summary><span class="p-name">EHR assistant and IVR</span><span class="p-line">A conversational assistant for health records and phone calls</span><span class="p-year">2018 to 2020</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>Care Cloud<b>Stack</b>Rasa Core, Rasa NLU</div>
+          <div><p>Intent detection and dialogue management for an EHR virtual assistant, plus automated IVR call flows.</p><p class="wl">Read the write-up: <a href="blog/ehr-virtual-assistant.html">My first chatbot</a> and <a href="blog/ivr-voice-bot-tacotron2.html">A voice bot for insurance calls</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="speech">
+        <summary><span class="p-name">Speech and voice</span><span class="p-line">Medical speech recognition and a voice-verification API</span><span class="p-year">2018 to 2021</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>Care Cloud and VisionX<b>Stack</b>Deep Speech, PyTorch, GE2E loss, Docker, Flask</div>
+          <div><p>Fine-tuned Deep Speech on annotated call audio with a statistical language model on top, and designed the cloud architecture for a speaker-verification REST API.</p><p class="wl">Read the write-up: <a href="blog/deep-speech-medical-audio.html">Deep Speech on medical audio</a> and <a href="blog/speaker-identification-verification.html">Voices as identity</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="llm">
+        <summary><span class="p-name">Lead-gen NLP</span><span class="p-line">Classification, entity recognition and text generation for marketing</span><span class="p-year">2021 to 2022</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>AI Bees<b>Stack</b>LangChain, DistilBERT, XLM-RoBERTa, GPT-J, GPT-Neo, FastAPI</div>
+          <div><p>A 0.91 F1 response classifier, a named-entity model, and self-hosted LLMs generating cold emails and subject lines for the marketing team.</p><p class="wl">Read the write-up: <a href="blog/lead-gen-nlp-ai-bees.html">NLP for lead generation</a> and <a href="blog/cold-email-generator-gptj.html">An email generator on GPT-J</a></p></div>
+        </div>
+      </details>
+
+      <details class="proj" data-tags="mlops">
+        <summary><span class="p-name">Infrastructure as code</span><span class="p-line">Terraform and CI/CD for AWS ML workloads</span><span class="p-year">2021 to 2023</span></summary>
+        <div class="p-body">
+          <div class="p-meta"><b>Built at</b>Point of IT<b>Stack</b>Terraform, AWS Batch, ECS, Lambda, Docker</div>
+          <div><p>Provisioned AWS environments, ran training and inference on Batch, and built deployment pipelines for three clients: MoodMD, Boston University (BUCAS) and Gardiant.</p><p class="wl">Read the write-up: <a href="blog/terraform-cicd-for-ml.html">Terraform, CI/CD and the part of ML that decides whether anything ships</a></p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WRITING ================= -->
+<section class="writing" id="writing" aria-labelledby="wrtitle">
+  <div class="wrap">
+    <h2 class="disp" id="wrtitle">Writing</h2>
+    <!-- WRITING:START (generated by build.py, do not edit between the markers) -->
+    <p class="intro">20 write-ups, one for each project on my resume and LinkedIn. Here are six to start with.</p>
+    <div class="wlist"><a class="row-a" href="blog/zero-multi-agent-assistant.html"><span class="t">Building Zero: a multi-agent assistant for sensitive records</span><span class="d">What it takes to make an AI assistant that officers and managers can rely on, told as principles rather than a design document.</span><span class="y">December 2025</span></a><a class="row-a" href="blog/hercule-evidence-to-answers.html"><span class="t">Hercule: turning audio, video, images and PDFs into answers</span><span class="d">One destination for four very different formats: text plus structure, and a chatbot on top.</span><span class="y">June 2024</span></a><a class="row-a" href="blog/lili-clinical-notes-to-ehr.html"><span class="t">Lili: from physician notes to a filled-in EHR encounter</span><span class="d">Extracting diagnoses, procedures and medications from free text, then writing them into the record through FHIR.</span><span class="y">January 2024</span></a><a class="row-a" href="blog/terraform-cicd-for-ml.html"><span class="t">Terraform, CI/CD and the part of ML that decides whether anything ships</span><span class="d">Two years of infrastructure and delivery work across MoodMD, Boston University and Gardiant.</span><span class="y">March 2023</span></a><a class="row-a" href="blog/packagex-parcel-tracking.html"><span class="t">PackageX: reading parcel labels in real time</span><span class="d">Sender and receiver details from messy, multilingual parcel photos, above 0.94 F1.</span><span class="y">June 2021</span></a><a class="row-a" href="blog/pdf-redaction-pii.html"><span class="t">Redacting personal data from PDFs with OCR and layout models</span><span class="d">GDPR turns documents into liabilities. Finding and masking the personal data automatically.</span><span class="y">January 2021</span></a></div>
+    <p class="all"><a class="btn solid" href="blog/index.html">Read all 20 posts</a></p>
+    <!-- WRITING:END -->
+  </div>
+</section>
+
+<!-- ================= TOOLBOX ================= -->
+<section class="tools" id="toolbox" aria-labelledby="ttitle">
+  <div class="wrap">
+    <h2 class="disp" id="ttitle">Toolbox</h2>
+    <div class="tgrid">
+      <div class="tg o">
+        <h3>Agents and LLMs</h3>
+        <ul>
+          <li>Pydantic AI</li><li>LangGraph</li><li>LangChain</li><li>AWS Bedrock (Claude, Titan)</li><li>OpenAI</li><li>Multi-agent orchestration</li><li>Guardrails and prompt-injection defense</li><li>LLM-as-a-judge and eval harnesses</li>
+        </ul>
+      </div>
+      <div class="tg m">
+        <h3>Retrieval and data</h3>
+        <ul>
+          <li>RAG pipelines</li><li>LanceDB</li><li>ChromaDB</li><li>Milvus</li><li>PostgreSQL</li><li>Redis</li><li>DynamoDB</li><li>Elasticsearch</li><li>MySQL</li>
+        </ul>
+      </div>
+      <div class="tg n">
+        <h3>Vision and speech</h3>
+        <ul>
+          <li>OCR and Tesseract</li><li>LayoutLMv2 and v3</li><li>PICK</li><li>Qwen vision-language models</li><li>Whisper</li><li>Deep Speech</li><li>AWS Textract</li>
+        </ul>
+      </div>
+      <div class="tg n">
+        <h3>Models and training</h3>
+        <ul>
+          <li>PyTorch</li><li>TensorFlow</li><li>BERT and DistilBERT</li><li>XLM-RoBERTa</li><li>GPT-J and GPT-Neo</li><li>Hugging Face</li><li>NLP and computer vision</li>
+        </ul>
+      </div>
+      <div class="tg o">
+        <h3>Serving and backend</h3>
+        <ul>
+          <li>Python and AsyncIO</li><li>FastAPI</li><li>Flask</li><li>PyTorch Serve and ONNX</li><li>Redis Streams</li><li>Server-Sent Events</li><li>Docker</li>
+        </ul>
+      </div>
+      <div class="tg m">
+        <h3>Cloud and healthcare</h3>
+        <ul>
+          <li>AWS: Batch, SageMaker, ECS, Lambda, Athena</li><li>GCP</li><li>Terraform and CI/CD</li><li>FHIR, ICD-10, CPT and EHR systems</li><li>HIPAA and GDPR-aware design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact" aria-labelledby="ctitle">
+  <div class="wrap">
+    <h2 class="disp" id="ctitle">Bring me the messy data.</h2>
+    <p class="intro">Agentic AI, document intelligence, multimodal RAG, or an ML system that has to survive production. Write to me and tell me what you're trying to make sense of.</p>
+    <div class="row">
+      <a class="btn solid" href="mailto:sibt.rj@gmail.com">Email me</a>
+      <button class="btn" type="button" id="copyMail">Copy email address</button>
+      <a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+      <a class="btn" href="Sibtain_Raza_Resume.pdf">Résumé (PDF)</a>
+    </div>
+    <div class="foot">
+      <span>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</span>
+      <span>Hand-built: one HTML file, no frameworks. <span id="yr"></span></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- mobile nav ---------- */
+  var menuBtn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.closest('a')) { links.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ---------- hero: signal that organizes itself ---------- */
+  var c = document.getElementById('field');
+  var ctx = c.getContext('2d');
+  var hero = document.getElementById('top');
+  var w = 0, h = 0, pts = [], raf = 0, visible = true, t = 0;
+  var ptr = {x:0, y:0, on:false};
+  var CELL = 76, REACH = 260, LINK = 104;
+
+  function build(){
+    var r = c.getBoundingClientRect();
+    w = r.width; h = r.height;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    var cols = Math.max(2, Math.floor(w / CELL)), rows = Math.max(2, Math.floor(h / CELL));
+    var cells = [];
+    for (var i = 0; i < cols; i++) for (var j = 0; j < rows; j++) cells.push([(i + .5) * (w / cols), (j + .5) * (h / rows)]);
+    for (var k = cells.length - 1; k > 0; k--) { var m = Math.floor(Math.random() * (k + 1)); var tmp = cells[k]; cells[k] = cells[m]; cells[m] = tmp; }
+    var n = Math.min(cells.length, Math.max(36, Math.round(w * h / 12500)));
+    pts = [];
+    for (var p = 0; p < n; p++) {
+      pts.push({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - .5) * .38, vy: (Math.random() - .5) * .38,
+        r: Math.random() * 1.3 + .8, o: reduce ? .55 : 0,
+        hx: cells[p][0], hy: cells[p][1], rx: 0, ry: 0,
+        hot: Math.random() < .16
+      });
+    }
+    LINK = Math.max(w / cols, h / rows) * 1.28;
+  }
+
+  function frame(){
+    t += .007;
+    var px = ptr.x, py = ptr.y;
+    if (!ptr.on) { px = w * (.5 + .4 * Math.sin(t * 1.15)); py = h * (.52 + .3 * Math.sin(t * .83 + 1.2)); }
+    var i, j, p, q;
+    for (i = 0; i < pts.length; i++) {
+      p = pts[i];
+      if (!reduce) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -12) p.x = w + 12; else if (p.x > w + 12) p.x = -12;
+        if (p.y < -12) p.y = h + 12; else if (p.y > h + 12) p.y = -12;
+        var d = Math.hypot(p.x - px, p.y - py);
+        var target = d < REACH ? 1 - d / REACH : 0;
+        p.o += (target - p.o) * .055;
+      }
+      p.rx = p.x + (p.hx - p.x) * p.o;
+      p.ry = p.y + (p.hy - p.y) * p.o;
+      if (reduce) { p.rx = p.hx; p.ry = p.hy; }
+    }
+    ctx.clearRect(0, 0, w, h);
+    ctx.lineWidth = 1;
+    for (i = 0; i < pts.length; i++) {
+      p = pts[i];
+      for (j = i + 1; j < pts.length; j++) {
+        q = pts[j];
+        var dx = p.rx - q.rx, dy = p.ry - q.ry, d2 = dx * dx + dy * dy;
+        if (d2 < LINK * LINK) {
+          var s = Math.min(p.o, q.o);
+          var a = (1 - Math.sqrt(d2) / LINK) * (.08 + .8 * s);
+          ctx.strokeStyle = 'rgba(232,144,155,' + a.toFixed(3) + ')';
+          ctx.beginPath(); ctx.moveTo(p.rx, p.ry); ctx.lineTo(q.rx, q.ry); ctx.stroke();
+        }
+      }
+    }
+    for (i = 0; i < pts.length; i++) {
+      p = pts[i];
+      var rad = p.r * (1 + p.o * .9);
+      ctx.fillStyle = p.hot ? 'rgba(157,176,236,' + (.5 + .5 * p.o).toFixed(2) + ')' : 'rgba(178,183,85,' + (.5 + .5 * p.o).toFixed(2) + ')';
+      ctx.beginPath(); ctx.arc(p.rx, p.ry, rad, 0, 6.2832); ctx.fill();
+    }
+    if (!reduce && visible && !document.hidden) raf = requestAnimationFrame(frame);
+    else raf = 0;
+  }
+  function start(){ if (!raf) raf = requestAnimationFrame(frame); }
+
+  build(); frame();
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ build(); frame(); }, 150); });
+  hero.addEventListener('pointermove', function(e){ var r = c.getBoundingClientRect(); ptr.x = e.clientX - r.left; ptr.y = e.clientY - r.top; ptr.on = true; });
+  hero.addEventListener('pointerleave', function(){ ptr.on = false; });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if (visible && !reduce) start(); }).observe(hero);
+  }
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden && !reduce) start(); });
+
+  /* ---------- playground ---------- */
+  var FLOW = {
+    audio: { ask: 'What did the caller say about the location?', steps: [
+      ['Ingest', 'Audio file', 'A recording arrives from the source system.'],
+      ['Extract', 'Speech to text', 'Self-hosted Whisper turns speech into a timestamped transcript.'],
+      ['Structure', 'Fields and entities', 'People, places, objects and times become structured records.'],
+      ['Index', 'Vector store', 'Transcript chunks are embedded for semantic search.'],
+      ['Query', 'Plain language', 'A person asks a question and gets an answer grounded in the recording.'] ] },
+    video: { ask: 'Who appears in the clip, and what is said?', steps: [
+      ['Ingest', 'Video file', 'A clip arrives with its audio track attached.'],
+      ['Extract', 'Frames and speech', 'Speech-to-text on the audio, a vision-language model on sampled frames.'],
+      ['Structure', 'A timeline', 'What was said and what was seen are aligned on one timeline.'],
+      ['Index', 'Vector store', 'Transcript and frame descriptions are embedded together.'],
+      ['Query', 'Plain language', 'Ask about any moment without scrubbing through footage.'] ] },
+    image: { ask: 'What text is visible in the photo?', steps: [
+      ['Ingest', 'Image', 'A photo or scan arrives from a user or system.'],
+      ['Extract', 'Vision and OCR', 'A vision-language model describes it and OCR reads the text.'],
+      ['Structure', 'Fields', 'Objects, visible text and attributes become structured data.'],
+      ['Index', 'Vector store', 'Descriptions are embedded alongside the extracted text.'],
+      ['Query', 'Plain language', 'Search images by what is in them, not by file name.'] ] },
+    pdf: { ask: 'What is the total on page two?', steps: [
+      ['Ingest', 'PDF document', 'Scanned or digital, single page or hundreds.'],
+      ['Extract', 'OCR and layout', 'OCR plus layout-aware models read text, tables and positions.'],
+      ['Structure', 'Sections and fields', 'Headings, tables and key fields are pulled into a schema.'],
+      ['Index', 'Vector store', 'Sections are chunked and embedded for retrieval.'],
+      ['Query', 'Plain language', 'Ask the document directly and get the passage that answers it.'] ] },
+    text: { ask: 'Which incidents mention a second vehicle?', steps: [
+      ['Ingest', 'Narratives', 'Free-text notes and reports flow in from records systems.'],
+      ['Extract', 'Clean and chunk', 'Text is cleaned, split and tagged with metadata.'],
+      ['Structure', 'Entities', 'Names, places and objects are recognized and linked.'],
+      ['Index', 'Vector and keyword', 'Semantic and exact-match search work together.'],
+      ['Query', 'Plain language', 'Ask across thousands of narratives at once.'] ] }
+  };
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('#pipe .node'));
+  var askEl = document.getElementById('ask'), segBtns = document.querySelectorAll('.seg button');
+  var current = 'audio', timers = [];
+  function run(key){
+    current = key;
+    timers.forEach(clearTimeout); timers = [];
+    var flow = FLOW[key];
+    askEl.textContent = '> ' + flow.ask;
+    nodes.forEach(function(n, i){
+      n.classList.remove('on');
+      n.querySelector('.k').textContent = flow.steps[i][0];
+      n.querySelector('h3').textContent = flow.steps[i][1];
+      n.querySelector('p').textContent = flow.steps[i][2];
+      if (reduce) n.classList.add('on');
+      else timers.push(setTimeout(function(){ n.classList.add('on'); }, 120 + i * 420));
+    });
+  }
+  segBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      segBtns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      run(b.dataset.k);
+    });
+  });
+  document.getElementById('replay').addEventListener('click', function(){ run(current); });
+  if ('IntersectionObserver' in window) {
+    var played = false;
+    new IntersectionObserver(function(es, ob){
+      if (es[0].isIntersecting && !played) { played = true; run(current); ob.disconnect(); }
+    }, {threshold: .35}).observe(document.getElementById('pipe'));
+  } else { run(current); }
+  run(current); // fill text immediately so nothing is blank
+
+  /* ---------- project filters ---------- */
+  var fBtns = document.querySelectorAll('#filters button'), rows = document.querySelectorAll('#projects .proj');
+  fBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      fBtns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var f = b.dataset.f;
+      rows.forEach(function(r){
+        var show = f === 'all' || r.dataset.tags.split(' ').indexOf(f) > -1;
+        r.hidden = !show;
+        if (!show) r.open = false;
+      });
+    });
+  });
+
+  /* ---------- copy email ---------- */
+  var copyBtn = document.getElementById('copyMail'), mail = 'sibt.rj@gmail.com';
+  copyBtn.addEventListener('click', function(){
+    function done(ok){ copyBtn.textContent = ok ? 'Copied' : mail; setTimeout(function(){ copyBtn.textContent = 'Copy email address'; }, 2200); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(mail).then(function(){ done(true); }, function(){ done(false); });
+    else done(false);
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

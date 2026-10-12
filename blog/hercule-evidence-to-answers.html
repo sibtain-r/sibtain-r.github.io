@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hercule: turning audio, video, images and PDFs into answers | Sibtain Raza</title>
+<meta name="description" content="One destination for four very different formats: text plus structure, and a chatbot on top.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-maroon"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2024-06-01">June 2024</time></p>
+<h1 class="disp">Hercule: turning audio, video, images and PDFs into answers</h1>
+<p class="dek">One destination for four very different formats: text plus structure, and a chatbot on top.</p>
+</div></section>
+<article class="post h-maroon"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>June 2024</dd><dt>Topic</dt><dd>Agents and multimodal systems</dd><dt>Where</dt><dd>HighPlains Computing (Los Angeles, remote)</dd><dt>When</dt><dd>2023 to 2025</dd><dt>Tools</dt><dd><ul><li>Whisper</li><li>Qwen vision-language model</li><li>AWS Textract</li><li>ChromaDB</li><li>AWS Bedrock</li><li>LangGraph</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>Hercule is an analytics platform for law enforcement. It ingests audio, video, images and PDF documents and turns them into structured data that a chatbot can answer questions about.</p>
+<h2>Four formats, one destination</h2>
+<p>Evidence arrives in formats that have nothing in common. The trick is to give every format the same destination: text plus structure.</p>
+<ul><li><strong>Audio</strong> goes through self-hosted Whisper for speech-to-text.</li><li><strong>Images and documents</strong> go through a Qwen vision-language model for understanding, and AWS Textract for structured extraction from forms and tables.</li><li><strong>Video</strong> brings the two together: what is said and what is shown.</li><li><strong>PDFs</strong> may be scanned pages or digital documents, so they need both text extraction and layout awareness.</li></ul>
+<h2>Structure first, then search</h2>
+<p>The extracted content does two jobs. The structured fields are stored in a database, where they can be filtered and counted. The extracted text feeds a retrieval-augmented generation (RAG) system built on ChromaDB, with embeddings from AWS Bedrock models, so questions about meaning can be answered from the right passages.</p>
+<h2>A chatbot built as a graph</h2>
+<p>The front door is a chatbot built with LangGraph. A graph makes the control flow explicit: decide what kind of question this is, retrieve, answer, and know when to stop. That is easier to debug than a free-running agent loop, which matters when the people asking need dependable answers.</p>
+<h2>Why self-host the models</h2>
+<p>When the material is sensitive, running speech and vision models yourself is a common choice because it keeps the content under your control. It also gives you control over cost and throughput, which matters when you process batches of long recordings.</p>
+<h2>Lessons for anyone building multimodal RAG</h2>
+<ul><li>Keep provenance. Every chunk should point back to its source file and, for audio and video, its position in time.</li><li>Normalize before you embed. Clean text retrieves better than raw output.</li><li>Make ingestion repeatable. Re-running a file must not create duplicates.</li><li>Treat extraction quality as a product feature, because retrieval can only be as good as what was extracted.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="careem-usage-analytics.html"><small>Newer post</small><span>The unglamorous side of ML work</span></a><a href="lili-clinical-notes-to-ehr.html"><small>Older post</small><span>Lili</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

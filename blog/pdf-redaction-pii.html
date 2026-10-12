@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redacting personal data from PDFs with OCR and layout models | Sibtain Raza</title>
+<meta name="description" content="GDPR turns documents into liabilities. Finding and masking the personal data automatically.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-navy"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2021-01-01">January 2021</time></p>
+<h1 class="disp">Redacting personal data from PDFs with OCR and layout models</h1>
+<p class="dek">GDPR turns documents into liabilities. Finding and masking the personal data automatically.</p>
+</div></section>
+<article class="post h-navy"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>January 2021</dd><dt>Topic</dt><dd>Document AI</dd><dt>Where</dt><dd>VisionX (Islamabad)</dd><dt>When</dt><dd>2020 to 2021</dd><dt>Tools</dt><dd><ul><li>OCR</li><li>Text detection</li><li>LayoutLMv2</li><li>PyTorch</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>Privacy law turns documents into liabilities. GDPR requires that personal data is handled carefully, and a pile of invoices, passports, resumes and pay stubs is full of it.</p>
+<h2>The goal</h2>
+<p>Find personal data in documents and mask it, automatically. The documents I worked with included invoices, receipts, passports, resumes and pay stubs, financial and healthcare documents alike.</p>
+<h2>The pipeline</h2>
+<ol><li>OCR and text detection locate every piece of text and its bounding box on the page.</li><li>A layout-aware transformer, such as LayoutLMv2, classifies what each piece is: name, address, ID number, amount.</li><li>Pieces classified as personal data are masked by covering those exact coordinates in the output.</li></ol>
+<h2>Why detection quality is the whole game</h2>
+<p>A missed name is a privacy failure. A masked total is a usability failure. The two errors are not equally costly, so I would tune for recall on personal-data classes and accept some over-redaction.</p>
+<h2>Details that bite</h2>
+<ul><li>Redaction must remove the data, not just cover it. If the original text layer survives under a black box, the document is not redacted.</li><li>Scans and digital PDFs behave differently, and many are a mix.</li><li>Names and addresses vary across countries and scripts.</li></ul>
+<h2>What it is not</h2>
+<p>Automated redaction reduces effort and risk, but high-stakes documents still deserve a human review of the result.</p>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="packagex-parcel-tracking.html"><small>Newer post</small><span>PackageX</span></a><a href="insurance-cards-licences-pick.html"><small>Older post</small><span>Insurance cards and driving licences</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

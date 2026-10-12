@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An email generator on GPT-J: templates, prompts and a person in the loop | Sibtain Raza</title>
+<meta name="description" content="More than 15 condition-based templates for cold emails, introductions and subject lines.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-navy"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2021-11-01">November 2021</time></p>
+<h1 class="disp">An email generator on GPT-J: templates, prompts and a person in the loop</h1>
+<p class="dek">More than 15 condition-based templates for cold emails, introductions and subject lines.</p>
+</div></section>
+<article class="post h-navy"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>November 2021</dd><dt>Topic</dt><dd>LLMs and NLP</dd><dt>Where</dt><dd>AI Bees (Hamburg, remote)</dd><dt>When</dt><dd>September 2021 to February 2022</dd><dt>Tools</dt><dd><ul><li>GPT-J</li><li>GPT-Neo</li><li>LangChain</li><li>Prompt engineering</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>In 2021 I built an email generator for the marketing team at AI Bees, using a self-hosted GPT-J model and prompt engineering.</p>
+<h2>What it made</h2>
+<p>Cold emails, introductory messages for sales and marketing campaigns, and subject lines. More than 15 different condition-based text-generation templates were created.</p>
+<h2>Why templates</h2>
+<p>A language model asked to "write a cold email" produces something different every time. Condition-based templates fix the structure and let the model fill in the parts that should vary: the audience, the offer and the tone. The result is output a marketer can predict and review.</p>
+<h2>Prompt engineering in practice</h2>
+<ul><li>Show the model examples of the format you want.</li><li>Put the conditions in the prompt explicitly.</li><li>Keep each template focused on one kind of message.</li><li>Review outputs the way you would review a junior writer's drafts.</li></ul>
+<h2>Why self-host</h2>
+<p>Open models such as GPT-J and GPT-Neo could run on infrastructure we controlled, which made cost and data handling predictable. Orchestration used LangChain.</p>
+<h2>Looking back</h2>
+<p>The models of that era needed careful prompting and a human in the loop. Today's models follow instructions much better, but the lessons carry over: constrain the structure, show examples, and keep a person responsible for what goes out.</p>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="lead-gen-nlp-ai-bees.html"><small>Newer post</small><span>NLP for lead generation</span></a><a href="packagex-parcel-tracking.html"><small>Older post</small><span>PackageX</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

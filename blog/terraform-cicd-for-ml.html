@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terraform, CI/CD and the part of ML that decides whether anything ships | Sibtain Raza</title>
+<meta name="description" content="Two years of infrastructure and delivery work across MoodMD, Boston University and Gardiant.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-black"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2023-03-01">March 2023</time></p>
+<h1 class="disp">Terraform, CI/CD and the part of ML that decides whether anything ships</h1>
+<p class="dek">Two years of infrastructure and delivery work across MoodMD, Boston University and Gardiant.</p>
+</div></section>
+<article class="post h-olive"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>March 2023</dd><dt>Topic</dt><dd>Analytics and MLOps</dd><dt>Where</dt><dd>Point of IT (US-based company, remote)</dd><dt>When</dt><dd>2021 to 2023</dd><dt>Tools</dt><dd><ul><li>Terraform</li><li>AWS Batch</li><li>ECS</li><li>Lambda</li><li>Docker</li><li>Python</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>Before I worked on LLM products, I spent two years on the part of ML that decides whether anything ships: infrastructure and delivery. At Point of IT, a US-based company, I worked on client engagements across three organizations.</p>
+<h2>MoodMD</h2>
+<p>The work was Terraform pipelines plus Python DevOps scripts. A big part of the job was checking that the client's models were actually running, because a model that silently stops serving is worse than one that fails loudly.</p>
+<h2>Boston University (BUCAS)</h2>
+<p>Here I designed a CI/CD pipeline and deployed it. The aim of any pipeline is to make the safe path the easy path, so every change is built, tested and released the same way.</p>
+<h2>Gardiant</h2>
+<p>For Gardiant I wrote Terraform and Python automation for CI/CD of AWS Lambda functions and ECS applications. Lambda and ECS suit different workloads, short event-driven functions and long-running containers, and a good pipeline handles both without special cases.</p>
+<h2>Training and inference on AWS Batch</h2>
+<p>Beyond client projects, I built pipelines on AWS Batch for large-scale model training and inference, with ML services containerized in Docker. Batch handles queueing, compute environments and scaling, so engineers submit jobs instead of managing machines.</p>
+<h2>Principles I took from it</h2>
+<ul><li>If it is not in code, it does not exist. Environments created by hand cannot be reproduced.</li><li>Monitor model behavior, not only servers. Up is not the same as correct.</li><li>Keep pipelines boring. Surprises belong in experiments, not releases.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="lili-clinical-notes-to-ehr.html"><small>Newer post</small><span>Lili</span></a><a href="lead-gen-nlp-ai-bees.html"><small>Older post</small><span>NLP for lead generation</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

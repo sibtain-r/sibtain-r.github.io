@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voices as identity: from Gaussian mixtures to GE2E | Sibtain Raza</title>
+<meta name="description" content="Speaker identification in 2018, speaker verification behind a REST API in 2020.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-navy"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2020-06-01">June 2020</time></p>
+<h1 class="disp">Voices as identity: from Gaussian mixtures to GE2E</h1>
+<p class="dek">Speaker identification in 2018, speaker verification behind a REST API in 2020.</p>
+</div></section>
+<article class="post h-navy"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>June 2020</dd><dt>Topic</dt><dd>Speech, health and conversation</dd><dt>Where</dt><dd>Personal project and VisionX</dd><dt>When</dt><dd>2018 to 2020</dd><dt>Tools</dt><dd><ul><li>GMM</li><li>GE2E loss</li><li>PyTorch</li><li>Docker</li><li>Flask</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>A voice is a biometric you carry everywhere. Two of my projects dealt with it: speaker identification in 2018 and speaker verification in 2020.</p>
+<h2>Identification versus verification</h2>
+<ul><li><strong>Identification</strong> asks: which of these known speakers is talking?</li><li><strong>Verification</strong> asks: is this person who they claim to be?</li></ul>
+<p>Identification is a classification problem. Verification is a matching problem, and it has to work for speakers the system never saw in training.</p>
+<h2>Speaker identification</h2>
+<p>I classified the voices of different speakers using Gaussian mixture models (GMMs) and deep learning. A GMM models the distribution of a speaker's acoustic features, and you classify new audio by asking which speaker's model explains it best. Deep networks learn the features themselves.</p>
+<h2>Speaker verification</h2>
+<p>To verify a user on a phone call by their voice, I used the Generalized End-to-End (GE2E) loss in PyTorch to learn speaker embeddings. Training batches contain several speakers with several utterances each. The loss pulls each utterance towards the center of its own speaker and pushes it away from the others. At test time you compare the embedding of the incoming voice with the stored one, and a threshold makes the decision.</p>
+<h2>Putting it behind an API</h2>
+<p>I completed the cloud architecture for a REST API around the verification model, with Docker and Flask, so applications could call it.</p>
+<h2>Lessons</h2>
+<ul><li>The threshold is a business decision. Raising it blocks fraud and annoys real users.</li><li>Phone audio is narrow-band and noisy, so train on audio that looks like production.</li><li>Voice is sensitive data. Store embeddings with the same care as passwords.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="insurance-cards-licences-pick.html"><small>Newer post</small><span>Insurance cards and driving licences</span></a><a href="receipts-english-arabic-layoutlm.html"><small>Older post</small><span>Reading receipts in English and Arabic, then reading thousands of templates</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

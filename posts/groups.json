@@ -1,0 +1,32 @@
+[
+  {
+    "key": "now",
+    "name": "Agents and multimodal systems",
+    "sub": "Where I work today: assistants, retrieval and clinical automation."
+  },
+  {
+    "key": "ops",
+    "name": "Analytics and MLOps",
+    "sub": "The delivery side of machine learning."
+  },
+  {
+    "key": "llm",
+    "name": "LLMs and NLP",
+    "sub": "Language models for marketing, before and during the LLM boom."
+  },
+  {
+    "key": "doc",
+    "name": "Document AI",
+    "sub": "Teaching machines to read pages, cards, labels and scripts."
+  },
+  {
+    "key": "speech",
+    "name": "Speech, health and conversation",
+    "sub": "Voices, calls and chatbots at Care Cloud."
+  },
+  {
+    "key": "start",
+    "name": "Where it started",
+    "sub": "University projects that set the direction."
+  }
+]

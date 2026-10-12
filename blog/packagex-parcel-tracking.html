@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PackageX: reading parcel labels in real time | Sibtain Raza</title>
+<meta name="description" content="Sender and receiver details from messy, multilingual parcel photos, above 0.94 F1.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-maroon"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2021-06-01">June 2021</time></p>
+<h1 class="disp">PackageX: reading parcel labels in real time</h1>
+<p class="dek">Sender and receiver details from messy, multilingual parcel photos, above 0.94 F1.</p>
+</div></section>
+<article class="post h-maroon"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>June 2021</dd><dt>Topic</dt><dd>Document AI</dd><dt>Where</dt><dd>PackageX (mailroom OCR service)</dd><dt>When</dt><dd>2021</dd><dt>Tools</dt><dd><ul><li>OCR</li><li>LayoutLMv2</li><li>LayoutLMv3</li><li>ONNX</li><li>PyTorch Serve</li><li>FastAPI</li><li>TensorFlow Lite</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>PackageX built a mailroom service. Parcels arrive at co-working spaces, and the people working there need to know when theirs has come. My work was reading the label.</p>
+<h2>The task</h2>
+<p>Extract the sender and receiver details from images of parcels, in many languages, so parcels can be tracked and users notified.</p>
+<h2>The pipeline</h2>
+<p>Optical character recognition converts the image to text. A transformer-based multimodal model, LayoutLM, labels the entities by combining the image, the bounding boxes and the text. I used LayoutLMv2 for labeling entities, reaching an F1-score above 0.94, and LayoutLMv3 for real-time extraction.</p>
+<h2>Real time, and personal data</h2>
+<p>Labels contain names and addresses, which is personal data, and the service had to run in real time. I extracted PII from package images in real time and built the data annotation pipeline for the mailroom OCR service.</p>
+<h2>Benchmarks</h2>
+<p>I also benchmarked visual-linguistic models for key information extraction, on OCR data and on direct images: CUTIE, Donut and CLIP. They represent different ideas. CUTIE reads documents as a grid of text, Donut skips OCR and reads the image directly, and CLIP matches images with text.</p>
+<h2>Serving</h2>
+<p>Models were optimized for low latency with ONNX and served with PyTorch Serve behind FastAPI. Lightweight computer-vision models were built with TensorFlow Lite for mobile deployment.</p>
+<h2>Lessons</h2>
+<ul><li>Annotation tooling decides how fast you iterate. The annotation pipeline mattered as much as the model.</li><li>Parcel labels are chaotic: handwriting, stickers, curved surfaces, many scripts. Evaluate on that mess.</li><li>Latency is a feature. A label read that takes too long is not a real-time service.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="cold-email-generator-gptj.html"><small>Newer post</small><span>An email generator on GPT-J</span></a><a href="pdf-redaction-pii.html"><small>Older post</small><span>Redacting personal data from PDFs with OCR and layout models</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

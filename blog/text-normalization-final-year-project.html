@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text normalization with deep learning: my final-year project | Sibtain Raza</title>
+<meta name="description" content="How written text becomes something a speech system can say.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-black"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2018-05-01">May 2018</time></p>
+<h1 class="disp">Text normalization with deep learning: my final-year project</h1>
+<p class="dek">How written text becomes something a speech system can say.</p>
+</div></section>
+<article class="post h-olive"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>May 2018</dd><dt>Topic</dt><dd>Where it started</dd><dt>Where</dt><dd>FAST-NUCES (Islamabad)</dd><dt>When</dt><dd>July 2017 to May 2018</dd><dt>Tools</dt><dd><ul><li>Neural networks</li><li>Sequence models</li><li>Speech synthesis</li><li>Speech recognition</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>My final-year project at FAST-NUCES was text normalization using deep learning.</p>
+<h2>What text normalization is</h2>
+<p>Speech systems need words, not symbols. A text-to-speech system must turn "$5.20" into "five dollars and twenty cents", and "3/4" into "three quarters" or "March fourth" depending on context. Speech recognition has the inverse problem. Normalization sits at the front of one and the end of the other.</p>
+<h2>The traditional approach</h2>
+<p>Hand-written rules. They work and they are painful: every language, every format and every exception is another rule.</p>
+<h2>Neural approaches</h2>
+<p>The project normalized text for speech synthesis and speech recognition using several neural network architectures, and compared them. Sequence models read the written form and write the spoken form.</p>
+<h2>The danger</h2>
+<p>A neural model can produce a fluent but wrong expansion, such as reading a number incorrectly. In speech systems that error is audible, so the best designs combine a model with checks or rules.</p>
+<h2>Why it mattered to me</h2>
+<p>It was my first end-to-end deep-learning project. It pointed me towards the speech work that followed.</p>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="ehr-virtual-assistant.html"><small>Newer post</small><span>My first chatbot</span></a><a href="first-project-university-management-system.html"><small>Older post</small><span>My first project</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>

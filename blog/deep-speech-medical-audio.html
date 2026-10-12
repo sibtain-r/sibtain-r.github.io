@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Speech on medical audio: from sound to codes | Sibtain Raza</title>
+<meta name="description" content="Speech recognition, a language model on top, and information extraction from transcripts.">
+<meta name="theme-color" content="#08122a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308122a'/%3E%3Crect x='8' y='8' width='20' height='20' fill='%23b2b755'/%3E%3Crect x='36' y='8' width='20' height='20' fill='%236b1826'/%3E%3Crect x='8' y='36' width='20' height='20' fill='%236b1826'/%3E%3Crect x='36' y='36' width='20' height='20' fill='%23b2b755'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+<a class="brand" href="../index.html">Sibtain Raza</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<ul id="navLinks">
+<li><a class="l" href="../index.html#journey">Journey</a></li>
+<li><a class="l" href="../index.html#work">Work</a></li>
+<li><a class="l" href="index.html" aria-current="page">Writing</a></li>
+<li><a class="l" href="../index.html#toolbox">Toolbox</a></li>
+<li><a class="l" href="../index.html#contact">Contact</a></li>
+</ul></div></header>
+<main id="main">
+<section class="phead b-olive"><div class="wrap">
+<p class="metaline"><a class="crumb" href="index.html">Writing</a><time datetime="2019-06-01">June 2019</time></p>
+<h1 class="disp">Deep Speech on medical audio: from sound to codes</h1>
+<p class="dek">Speech recognition, a language model on top, and information extraction from transcripts.</p>
+</div></section>
+<article class="post h-olive"><div class="wrap grid">
+<aside class="glance" aria-label="Project at a glance"><dl><dt>Date</dt><dd>June 2019</dd><dt>Topic</dt><dd>Speech, health and conversation</dd><dt>Where</dt><dd>Care Cloud (Islamabad)</dd><dt>When</dt><dd>2018 to 2020</dd><dt>Tools</dt><dd><ul><li>Deep Speech</li><li>PyTorch</li><li>Wav2vec</li><li>spaCy</li><li>BERT</li><li>DistilBERT</li><li>BART</li></ul></dd><dt>Reading time</dt><dd>2 minutes</dd></dl></aside>
+<div class="prose">
+<p>Doctors speak faster than they type. Speech recognition on medical audio was one of the first serious problems I worked on, at Care Cloud.</p>
+<h2>Deep Speech</h2>
+<p>I worked with the PyTorch implementation of Deep Speech, an end-to-end speech recognition model trained with CTC loss, and trained and fine-tuned it on audio of medical notes. I also annotated audio from IVR (interactive voice response) calls.</p>
+<h2>A language model on top</h2>
+<p>Acoustic models hear sounds. They do not know which words are likely. I added a statistical language model on top of Deep Speech, so decoding prefers plausible word sequences. In medicine that matters, because the vocabulary is full of terms that sound alike.</p>
+<h2>From transcript to information</h2>
+<p>A transcript is not yet useful. I analyzed it with spaCy and a text classifier to extract relevant information from the calls. My work with medical dictation also used Wav2vec, and transformers like BERT, DistilBERT and BART to extract medical entities such as ICD-10 codes, procedure codes and SNOMED CT concepts from raw transcripts.</p>
+<h2>An earlier cousin</h2>
+<p>Before Deep Speech, I trained a convolutional-recurrent speech-to-text model to transcribe voice commands for a chatbot, in 2018.</p>
+<h2>Lessons</h2>
+<ul><li>Annotation is the bottleneck. Clean transcripts of domain audio are worth more than a bigger model.</li><li>Domain vocabulary should be modeled, not hoped for.</li><li>Measure what the downstream task needs, not just word error rate.</li></ul>
+</div>
+</div></article>
+<nav class="pn" aria-label="More posts"><div class="wrap"><a href="urdu-ocr-synthetic-data.html"><small>Newer post</small><span>Urdu OCR</span></a><a href="ocr-from-open-source-parts.html"><small>Older post</small><span>Building OCR from parts</span></a></div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="row">
+<a class="btn solid" href="../index.html">Back to the portfolio</a>
+<a class="btn" href="index.html">All posts</a>
+<a class="btn" href="https://www.linkedin.com/in/sibt-ain/" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:sibt.rj@gmail.com">Email me</a>
+</div>
+<p>Sibtain Raza, from Shakargarh, Punjab. Based in Islamabad, Pakistan.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),l=document.getElementById('navLinks');
+b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body></html>
